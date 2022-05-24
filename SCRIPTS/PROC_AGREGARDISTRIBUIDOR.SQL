@@ -22,39 +22,3 @@ BEGIN
 	
 
 END
-
-drop PROCEDURE PROC_AGREGARDISTRIBUIDOR 
-
-EXEC PROC_AGREGARDISTRIBUIDOR  'AK1P850A','20200705', 'LILIANA','FLORES','MADRIGAL',
-'CALEXICO', '5801','BUROCRATA'
-
-SELECT * FROM addresses;
-SELECT * FROM distributors;
-SELECT * FROM persons;
-
-DROP TABLE addresses;
-DROP TABLE  distributors;
-DROP TABLE persons;
-
-CREATE TABLE distributors(
-id varchar(8),
-fecharegistro date
-);
-CREATE TABLE addresses(
-calle varchar(30),
-numero varchar(8),
-colonia varchar(30),
-id varchar(8)
-);
-CREATE TABLE persons(
-nombre varchar(30),
-appaterno varchar(30),
-apmaterno varchar(30),
-id varchar(8)
-);
-
-SELECT CONCAT (a.nombre, ' ', a.appaterno,' ', a.apmaterno) AS nombre, b.calle, b.numero,b.colonia 
-FROM persons AS a
-INNER JOIN addresses AS b ON (a.id = b.id)
-INNER JOIN distributors AS c ON (b.id = c.id)
-WHERE c.id ='AK1P850A'
