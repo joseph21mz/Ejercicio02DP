@@ -1,8 +1,8 @@
 CREATE PROCEDURE PROC_CONSULTARDISTRIBUIDOR (  @id VARCHAR(8))
 /*
-Autor: JOSÉ LUIS MEZA HERRERA.
+Autor: JOSï¿½ LUIS MEZA HERRERA.
 Fecha: 20/05/2022
-Decripción: Consultar los datos de los distribuidores de DP
+Decripciï¿½n: Consultar los datos de los distribuidores de DP
 Solicito: DP
 */
 AS
@@ -19,6 +19,5 @@ BEGIN
 
 END
 GO
-
-EXEC PROC_CONSULTARDISTRIBUIDOR 'AK1P850A';
+--EXEC PROC_CONSULTARDISTRIBUIDOR 'AK1P850A';
 
